@@ -17,5 +17,13 @@ const fileSchema=new mongoose.Schema({
     }
 });
 
+fileSchema.post("save",async function (doc) {
+    try{
+        console.log("DOC",doc);
+    } catch(error){
+        console.error(error);
+    }
+})
+
 const File=mongoose.model("File",fileSchema);
 module.exports=File;
